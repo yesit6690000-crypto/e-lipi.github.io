@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Lipi — Books for e-ink</title>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#e9eaec;color:#17181a;font:17px/1.6 "Instrument Sans",system-ui,sans-serif}
+*{box-sizing:border-box}
+a{color:inherit}
+:focus-visible{outline:3px solid #17181a;outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:Literata,Georgia,serif}
+header{border-bottom:2px solid #17181a;padding:14px 0;position:sticky;top:0;background:#e9eaec;z-index:5}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 22px Literata,Georgia,serif;text-decoration:none}
+nav a{margin-left:16px;text-decoration:none;font-weight:600}
+.btn{display:inline-block;padding:11px 20px;background:#17181a;color:#f6f6f7;border:2px solid #17181a;border-radius:4px;font:600 16px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:#f6f6f7;color:#17181a}
+.btn.ghost{background:transparent;color:#17181a}
+.hero{padding:48px 0 32px}
+.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.1;font-weight:800;margin:0 0 14px}
+.hero p{color:#5b5e63;max-width:52ch;margin:0 0 22px;font-size:18px}
+.hero .btn{margin:0 8px 8px 0}
+.dev{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid #17181a;border-radius:4px;background:#f6f6f7;margin-top:20px;font-size:14px}
+.dev div{padding:12px 14px;border-right:2px solid #17181a}
+.dev div:last-child{border-right:0}
+.dev b{display:block;font-family:Literata,serif;font-size:16px}
+section{padding:32px 0;border-top:2px solid #17181a}
+section h2{font-size:clamp(24px,4vw,32px);font-weight:800;margin:0 0 6px}
+.sub{color:#5b5e63;margin:0 0 18px;max-width:56ch}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+input,select{font:16px "Instrument Sans",sans-serif;padding:11px 12px;border:2px solid #17181a;border-radius:4px;background:#f6f6f7;color:#17181a;width:100%}
+.bar input{max-width:280px}
+.chip{padding:7px 14px;border:2px solid #17181a;border-radius:20px;background:transparent;font:600 14px "Instrument Sans",sans-serif;cursor:pointer;color:#17181a;margin-right:6px}
+.chip.on{background:#17181a;color:#f6f6f7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{display:block;text-decoration:none}
+.cover{display:flex;aspect-ratio:2/3;border:1.5px solid #17181a;border-radius:3px;background:#f6f6f7;overflow:hidden;align-items:center;justify-content:center;padding:8px;text-align:center;font:700 13px Literata,serif;box-shadow:2px 2px 0 #c6c8cc}
+.cover img{width:calc(100% + 16px);height:calc(100% + 16px);object-fit:cover;display:block;margin:-8px}
+.card h3{font-size:13px;margin:6px 0 0;line-height:1.3;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(min-width:560px){.grid{grid-template-columns:repeat(4,1fr);gap:20px}.card h3{font-size:15px}}
+@media(min-width:800px){.grid{grid-template-columns:repeat(6,1fr)}}
+.single{max-width:720px}
+.single h1{font-size:clamp(28px,5vw,40px);font-weight:800;margin:0 0 18px}
+.single img{max-width:min(320px,100%);height:auto;border:2px solid #17181a;border-radius:4px;display:block;margin:0 0 16px}
+.desc{white-space:pre-line;margin-bottom:24px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px}
+.form label{font-weight:600;font-size:15px;display:block;margin-bottom:4px}
+.full{grid-column:1/-1}
+footer{border-top:2px solid #17181a;padding:24px 0;color:#5b5e63;font-size:15px}
+@media(max-width:700px){.dev{grid-template-columns:1fr 1fr}.dev div:nth-child(2){border-right:0}.dev div:nth-child(-n+2){border-bottom:2px solid #17181a}.form{grid-template-columns:1fr}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#/">E-Lipi</a>
+<nav><a href="#/">Books</a><a href="#request">Request</a></nav>
+</div></header>
+
+<main id="home">
+<div class="wrap hero">
+<h1>Books made to read on e-ink.</h1>
+<p>Every book comes in EPUB and PDF for Kindle, Kobo, Boox and Xteink. Pick a book, or request one we don't have yet.</p>
+<a class="btn tg" href="#" target="_blank" rel="noopener">Buy on Telegram</a><a class="btn ghost" href="#request">Request a book</a>
+<div class="dev">
+<div><b>Kindle</b>Send the EPUB with Send to Kindle</div>
+<div><b>Kobo</b>Open the EPUB directly</div>
+<div><b>Boox</b>EPUB or PDF both work</div>
+<div><b>Xteink</b>Use the EPUB</div>
+</div>
+</div>
+<section><div class="wrap">
+<div class="bar"><input id="q" type="search" placeholder="Search books" aria-label="Search books"><span id="chips"></span></div>
+<div class="grid" id="shelf">Loading books...</div>
+</div></section>
+<section id="request"><div class="wrap">
+<h2>Request a book</h2>
+<p class="sub">Tell us the book you want. Nothing is stored on this website.</p>
+<form class="form" id="rf">
+<div class="full"><label for="rb">Book name</label><input id="rb" required maxlength="120"></div>
+<div><label for="ra">Author (optional)</label><input id="ra" maxlength="80"></div>
+<div><label for="rfm">Format</label><select id="rfm"><option>EPUB</option><option>PDF</option><option>EPUB + PDF</option></select></div>
+<div class="full"><label for="rd">Your device</label><select id="rd"><option>Kindle</option><option>Kobo</option><option>Boox</option><option>Xteink</option><option>Other</option></select></div>
+<div class="full"><button class="btn" type="submit">Send on Telegram</button></div>
+</form>
+</div></section>
+</main>
+
+<main id="book" hidden><div class="wrap" style="padding-top:32px;padding-bottom:32px"><article class="single" id="single"></article></div></main>
+
+<footer><div class="wrap">© E-Lipi · <a class="tg" href="#" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.facebook.com/profile.php?id=61594101703330" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/bookish_user" target="_blank" rel="noopener">Instagram</a></div></footer>
+
+<script>
+(function(){
+var TGG='https://t.me/+xm4tgEmJ0AgxYTQ1',TGME='https://t.me/hozoborolo_me';
+var books=[],cur='';
+var $=function(id){return document.getElementById(id)};
+function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+Array.prototype.forEach.call(document.querySelectorAll('.tg'),function(a){a.href=TGG});
+
+function cover(b){
+ var c=mk('div','cover');
+ if(b.image){var i=document.createElement('img');i.src=b.image;i.alt=b.title;i.loading='lazy';c.appendChild(i)}
+ else c.appendChild(mk('span','',b.title));
+ return c;
+}
+function draw(){
+ var q=$('q').value.toLowerCase(),s=$('shelf');s.textContent='';
+ var list=books.filter(function(b){
+  return (!cur||(b.tags||[]).indexOf(cur)>-1)&&(!q||(b.title+' '+(b.description||'')).toLowerCase().indexOf(q)>-1)});
+ if(!list.length){s.textContent='No books found.';return}
+ list.forEach(function(b){
+  var a=mk('a','card');a.href='#/book/'+encodeURIComponent(b.id);
+  a.appendChild(cover(b));a.appendChild(mk('h3','',b.title));s.appendChild(a);
+ });
+}
+function chips(){
+ var tags={};books.forEach(function(b){(b.tags||[]).forEach(function(t){tags[t]=1})});
+ var box=$('chips');box.textContent='';
+ var names=Object.keys(tags);if(!names.length)return;
+ [''].concat(names).forEach(function(t){
+  var b=mk('button','chip'+(t===cur?' on':''),t||'All');b.type='button';
+  b.onclick=function(){cur=t;chips();draw()};box.appendChild(b);
+ });
+}
+function route(){
+ var m=location.hash.match(/^#\/book\/(.+)$/);
+ if(!m){$('book').hidden=true;$('home').hidden=false;document.title='E-Lipi — Books for e-ink';return}
+ var id=decodeURIComponent(m[1]);
+ var b=books.filter(function(x){return x.id===id})[0];
+ $('home').hidden=true;$('book').hidden=false;window.scrollTo(0,0);
+ var s=$('single');s.textContent='';
+ if(!b){s.appendChild(mk('h1','',books.length?'Book not found':'Loading...'));return}
+ document.title=b.title+' — E-Lipi';
+ s.appendChild(mk('h1','',b.title));
+ if(b.image){var i=document.createElement('img');i.src=b.image;i.alt=b.title;s.appendChild(i)}
+ s.appendChild(mk('div','desc',b.description||''));
+ var buy=mk('a','btn','Buy on Telegram');buy.href=TGG;buy.target='_blank';buy.rel='noopener';
+ buy.onclick=function(){try{navigator.clipboard.writeText('Hello, I want to buy this book in EPUB + PDF: '+b.title)}catch(e){}};
+ s.appendChild(buy);
+ var back=mk('a','btn ghost','All books');back.href='#/';back.style.marginLeft='10px';s.appendChild(back);
+ var n=mk('p','sub','Tap Buy, then paste the copied message in the chat.');n.style.marginTop='14px';s.appendChild(n);
+}
+$('rf').addEventListener('submit',function(e){
+ e.preventDefault();
+ var v=function(id){return $(id).value.trim()};
+ var msg='Book request\nBook: '+v('rb')+(v('ra')?'\nAuthor: '+v('ra'):'')+'\nFormat: '+v('rfm')+'\nDevice: '+v('rd');
+ window.open(TGME+'?text='+encodeURIComponent(msg),'_blank');
+});
+$('q').addEventListener('input',draw);
+window.addEventListener('hashchange',function(){
+ if(location.hash==='#request'){$('book').hidden=true;$('home').hidden=false;$('request').scrollIntoView()}
+ else route();
+});
+fetch('books.json?v='+Date.now()).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+.then(function(d){books=d;chips();draw();route()})
+.catch(function(e){$('shelf').textContent='Could not load books: '+e.message});
+})();
+</script>
+</body>
+</html>
