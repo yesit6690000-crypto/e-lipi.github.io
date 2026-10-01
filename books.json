@@ -1,16 +1,3 @@
 [
-  {
-    "id": "sample-book-1",
-    "title": "Sample Book One",
-    "image": "images/sample-book-1.jpg",
-    "description": "Write a short detail about the book here.\nYou can use a second line too.",
-    "tags": ["Novel"]
-  },
-  {
-    "id": "sample-book-2",
-    "title": "Sample Book Two",
-    "image": "images/sample-book-2.jpg",
-    "description": "Another short description.",
-    "tags": ["Non-fiction"]
-  }
+{ "id": "book1", "title": "Book Name", "image": "images/book1.jpg", "description": "Short detail about the book.", "tags": ["Novel"] }
 ]
